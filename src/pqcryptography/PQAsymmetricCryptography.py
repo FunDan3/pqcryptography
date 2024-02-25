@@ -26,6 +26,11 @@ class encryption:
 			ciphertext = ciphertext[encrypted_key_size:]
 			plain_key = encryptor.decap_secret(encrypted_key)
 		return aes.decrypt(plain_key, ciphertext)
+	def get_details(algorithm = None):
+		algorithm = default_kem_algorithm if not algorithm else algorithm
+		with liboqs.KeyEncapsulation(algorithm) as encryptor:
+			details = encryptor.details
+		return details
 class signing:
 	def generate_signs(algorithm = None):
 		algorithm = default_sig_algorithm if not algorithm else algorithm
@@ -45,3 +50,8 @@ class signing:
 			message = message[signature_size:]
 			assert signer.verify(message, signature, public_sign)
 		return message
+	def get_details(algorithm = None):
+		algorithm = default_sig_algorithm if not algorithm else algorithm
+		with liboqs.Signature(algorithm) as signer:
+			details = signer.details
+		return details
