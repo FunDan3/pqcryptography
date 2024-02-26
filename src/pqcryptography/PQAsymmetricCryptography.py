@@ -31,6 +31,9 @@ class encryption:
 		with liboqs.KeyEncapsulation(algorithm) as encryptor:
 			details = encryptor.details
 		return details
+	def get_algorithms():
+		return liboqs.get_enabled_kem_mechanisms()
+
 class signing:
 	def generate_signs(algorithm = None):
 		algorithm = default_sig_algorithm if not algorithm else algorithm
@@ -55,3 +58,5 @@ class signing:
 		with liboqs.Signature(algorithm) as signer:
 			details = signer.details
 		return details
+	def get_algorithms():
+		return liboqs.get_enabled_sig_mechanisms()
