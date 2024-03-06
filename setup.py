@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
 	name = "pqcryptography",
-	version = "0.0.1",
+	version = "0.0.2",
 	author = "Fun_Dan3",
 	author_email = "dfr34560@gmail.com",
 	description = "easy post quantum cryptography library",
@@ -17,7 +17,7 @@ setuptools.setup(
 	},
 	classifiers = [
 		"Programming Language :: Python :: 3",
-		"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+		"License :: OSI Approved :: MIT License",
 		"Operating System :: OS Independent",
 	],
 	packages = setuptools.find_packages(where = "src"),
