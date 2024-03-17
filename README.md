@@ -27,7 +27,7 @@ message = "Test Message"
 encrypted_message = pqc.encryption.encrypt(public_key, message.encode("utf-8"))
 ```
 Please take into consideration that message needs to be encoded before encryption. Here I used utf-8 encoding. Alternatively you can use raw bytes for message.
-Also encryption of message increases its size exactly by 1600 bytes. This is because AES-256 nonce and tag is stored at the beginning of the message.
+Also encryption of message increases its size depending on algorithm. You can get this length of ciphertext using `pqc.encryption.get_details(algorithm = "{algorithm that you use}")`.
 `encrypted_message` type is bytes.
 **How decryption work**
 ```python3
