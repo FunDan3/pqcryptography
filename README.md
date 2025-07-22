@@ -1,5 +1,5 @@
 # PQCryptography
-
+#NO LONGER MAINTAINED
 This library was written due to rising threat of quantum computing.
 It main goal is to create easy wrapper of liboqs to spread post quantum cryptography
 
